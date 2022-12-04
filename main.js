@@ -8,23 +8,24 @@ var arr1 = [{ name:'s1', rollno:18 ,m: { p:70 ,c:60 ,math:90}},
 ]
 
 function printdata(){
-    document.getElementById('mydata').innerHTML+=''
-for (var i = 0; i < arr1.length; i++) {
-document.getElementById('mydata').innerHTML+=`
-<tr>
-    <td>${i+1}</td>
-    <td>${arr1[i].name}</td>
-    <td>${arr1[i].rollno}</td>
-    <td>${arr1[i].m.p}</td>
-    <td>${arr1[i].m.c}</td>
-    <td>${arr1[i].m.math}</td>
-    <td>${arr1[i].m.p+arr1[i].m.c+arr1[i].m.math}</td>
-    <td>${(((arr1[i].m.p+arr1[i].m.c+arr1[i].m.math)/300)*100).toFixed(2)}</td>
-    <td>
-        ${calgrade(arr1[i].m)}
-    </td>
-    <td>${result(arr1[i].m)}</td>
-</tr>`
+    document.getElementById('mydata').innerHTML= ' '
+    for (var i = 0; i < arr1.length; i++) {
+   
+    document.getElementById('mydata').innerHTML+=`
+    <tr>
+        <td>${i+1}</td>
+        <td>${arr1[i].name}</td>
+        <td>${arr1[i].rollno}</td>
+        <td>${arr1[i].m.p}</td>
+        <td>${arr1[i].m.c}</td>
+        <td>${arr1[i].m.math}</td>
+        <td>${arr1[i].m.p+arr1[i].m.c+arr1[i].m.math}</td>
+        <td>${(((arr1[i].m.p+arr1[i].m.c+arr1[i].m.math)/300)*100).toFixed(2)}</td>
+        <td>
+            ${calgrade(arr1[i].m)}
+        </td>
+        <td>${result(arr1[i].m)}</td>
+    </tr>`
 }
 }
 
@@ -37,23 +38,42 @@ function fun1(){
     var c = parseInt(document.getElementById('pm').value)
     var d = parseInt(document.getElementById('cm').value)
     var e = parseInt(document.getElementById('mm').value)
-    arr1.push(a,b,c,d,e)
+    arr1.name.push(a)
+    arr1.rollno.push(b)
+    arr1.m.p.push(c)
+    arr1.m.c.push(d)
+    arr1.m.math.push(e)
     printdata()
 }
 
 printdata()
 function result(m){
-    var total = arr1[i].m.p+arr1[i].m.c+arr1[i].m.math
+    var total = m.p+m.c+m.math
     if(total>120){
     return"PASS"}else {
         return "FAIL"}
 }
 
 function calgrade(m){
-    var total = arr1[i].m.p+arr1[i].m.c+arr1[i].m.math
-    var percent = (((arr1[i].m.p+arr1[i].m.c+arr1[i].m.math)/300)*100).toFixed(2)
-    if(percent>90){
-        return"A"}else {
+    var total = m.p+m.c+m.math
+    var percent = (((m.p+m.c+m.math)/300)*100).toFixed(2)
+    if(percent>90 && percent<100){
+        return"A"}
+    else if (percent>=80 && percent<90){
+        return "B"
+    }
+    else if (percent>=70 && percent<80){
+        return "C"
+    }
+    else if (percent>=60 && percent<70){
+        return "D"
+    }
+    else if (percent>=50 && percent<60){
+        return "E"
+    }
+    else if (percent>=40 && percent<50){
+        return "P"
+    } else if (percent>=0 && percent<40){
         return "Fail"
     }
 }
