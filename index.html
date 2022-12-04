@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Marks</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="demo" style="color: red" class="example"> 
+        <p>xyz</p>
+    <h1 class="RG">Rishi</h1>
+</div>
+<div class="inputtable">
+    <p>
+        <input type="number" id="nom" placeholder="serial number" maxlength="2"><br><br>
+        <input type="text" id="sname" placeholder="student name" ><br><br>
+        <input type="number" id="rno"placeholder="Rollno" maxlength="2"><br><br>
+        <input type="number" id="pm"placeholder="Physics Marks" maxlength="2"><br><br>
+        <input type="number" id="cm"placeholder="Chemistry Marks" maxlength="2"><br><br>
+        <input type="number" id="mm" placeholder="Maths Marks" maxlength="2"><br><br>
+        <input type="button" id="sb"value="submit">
+    </p>
+</div>
+<table border="1">
+    <thead>
+        <tr>
+            <td id="out1">Index</td> 
+            <td>name</td>  
+            <td>Rollno</td>
+            <td>Physics</td>
+            <td>Chemistry</td>
+            <td>Maths</td>
+        </tr>
+    </thead>
+    <tbody id="mydata"></tbody>
+</table>
+
+    <script src="main.js"></script>
+</body>
+</html>
